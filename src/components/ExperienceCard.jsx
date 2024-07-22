@@ -4,7 +4,6 @@ import './ExperienceCard.css';
 
 function ExperienceCard({ experience }) {
   const { title, company, period, description, logo } = experience;
-
   return (
     <Card className="experience-card">
       <CardContent className="experience-content">
