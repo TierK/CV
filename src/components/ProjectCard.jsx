@@ -16,7 +16,7 @@ const { title, description, demoLink, repoLink } = project;
   const handleMouseLeave = () => {
     if (videoRef.current) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Сбрасываем видео на начало
+      videoRef.current.currentTime = 0;
     }
   };
  
