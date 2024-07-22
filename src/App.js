@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ProjectCard from './components/ProjectCard';
 import ExperienceCard from './components/ExperienceCard';
-import { Phone as PhoneIcon, Email as EmailIcon } from '@mui/icons-material';
+import { Phone as PhoneIcon, Email as EmailIcon, Brightness4 as Brightness4Icon } from '@mui/icons-material'; // Импорт иконок
 import project1Video from './videos/project1.mp4';
 import project2Video from './videos/project1.mp4';
 import project3Video from './videos/project1.mp4';
@@ -59,19 +59,28 @@ const projects = [
 ];
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="container">
+    <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
       <header className="header">
         <h1>Kim Bondarchuk - Full Stack Developer</h1>
+        <button className="theme-toggle-button" onClick={toggleDarkMode}>
+          <Brightness4Icon />
+        </button>
         <div className="contact-info">
           <div className="contact-item">
-            <a href="tel:+972533442478" className="icon-wrapper">
+            <a href="tel:+972533442478">
               <PhoneIcon />
             </a>
             <span>053 344 24 78</span>
           </div>
           <div className="contact-item">
-            <a href="mailto:kimbfsd@gmail.com" className="icon-wrapper">
+            <a href="mailto:kimbfsd@gmail.com">
               <EmailIcon />
             </a>
             <span>kimbfsd@gmail.com</span>

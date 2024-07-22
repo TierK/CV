@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import './ExperienceCard.css';
 
 function ExperienceCard({ experience }) {
-  const { title, company, period, description, logo } = experience; // Добавьте `logo` для изображения
+  const { title, company, period, description, logo } = experience;
 
   return (
     <Card className="experience-card">
