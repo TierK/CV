@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import ProjectCard from './components/ProjectCard';
 import ExperienceCard from './components/ExperienceCard';
+import MatrixEffect from './components/MatrixEffect';
 import { Phone as PhoneIcon, Email as EmailIcon, Brightness4 as Brightness4Icon } from '@mui/icons-material'; // Импорт иконок
 import project1Video from './videos/project1.mp4';
 import project2Video from './videos/project1.mp4';
@@ -67,6 +68,7 @@ function App() {
 
   return (
     <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
+      
       <header className="header">
         <h1>Kim Bondarchuk - Full Stack Developer</h1>
         <button className="theme-toggle-button" onClick={toggleDarkMode}>
@@ -87,7 +89,7 @@ function App() {
           </div>
         </div>
       </header>
-
+      <MatrixEffect />
       <section>
         <h2>Professional Experience</h2>
         {experiences.map((experience, index) => (

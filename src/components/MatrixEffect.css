@@ -1,0 +1,41 @@
+/* src/components/MatrixEffect.css */
+.matrix-effect {
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none; /* Does not block interactions with other elements */
+    overflow: hidden;
+    z-index: 1000; /* Ensure the effect is above all other elements */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .matrix-effect.active {
+    opacity: 0.8; /* Make effect visible when active */
+    transition: opacity 5s ease-out;
+  }
+  
+  .matrix-column {
+    position: absolute;
+    top: 0;
+    width: 1em;
+    height: 100%;
+    font-family: monospace;
+    font-size: 0.8em; /* Adjust size for better visibility */
+    color: rgba(160, 169, 177, 0.8); /* Darker color with reduced opacity */
+    white-space: nowrap;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  @keyframes matrix-drop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
