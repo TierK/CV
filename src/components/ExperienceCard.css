@@ -1,0 +1,59 @@
+.experience-card {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Используем Flexbox для размещения элементов */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+.experience-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.experience-text {
+  flex: 1; /* Занимает доступное пространство */
+}
+
+.experience-logo {
+  margin-left: 16px;
+  width: 80px; /* Установите ширину логотипа по вашему усмотрению */
+  height: auto;
+  overflow: hidden;
+}
+
+.experience-logo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Добавляем скругление углов для логотипа */
+  transition: opacity 0.3s ease-in-out; /* Плавный переход для эффекта */
+}
+
+.experience-card:hover .experience-logo img {
+  opacity: 0.8; /* Эффект при наведении */
+}
+
+.experience-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #63a4ee;
+}
+
+.experience-company {
+  color: #0e55a7;
+  font-weight: bold;
+}
+
+.experience-period {
+  color: #0f2b79;
+  margin: 4px 0;
+}
+
+.experience-description {
+  margin-top: 8px;
+  color: #18225e;
+}
