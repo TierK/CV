@@ -4,8 +4,9 @@ import ProjectCard from './components/ProjectCard';
 import ExperienceCard from './components/ExperienceCard';
 import { Phone as PhoneIcon, Email as EmailIcon, Brightness4 as Brightness4Icon } from '@mui/icons-material'; // Импорт иконок
 import project1Video from './videos/project1.mp4';
-import project2Video from './videos/project1.mp4';
-import project3Video from './videos/project1.mp4';
+import project2Video from './videos/project2.mp4';
+import project3Video from './videos/project3.mp4';
+import project4Image from './images/project4.png'; // Updated to use 'image' instead of 'Vpic'
 import companyLogo1 from './images/elbit.png';
 import companyLogo2 from './images/iec.png';
 import companyLogo3 from './images/sber.png';
@@ -36,25 +37,32 @@ const experiences = [
 
 const projects = [
   {
-    title: 'Project 1',
+    title: 'Instagram Project',
     video: project1Video,
-    description: 'Description for project 1',
-    demoLink: 'https://demo1.com',
-    repoLink: 'https://github.com/repo1',
+    description: 'Social media models Project',
+    demoLink: 'https://tierk.github.io/instagram-ui/',
+    repoLink: 'https://github.com/TierK/instagram-ui',
   },
   {
-    title: 'Project 2',
+    title: 'Globs subscription page',
     video: project2Video,
-    description: 'Description for project 2',
-    demoLink: 'https://demo2.com',
-    repoLink: 'https://github.com/repo2',
+    description: 'Digital newspaper subscription price list',
+    demoLink: 'https://tierk.github.io/globs-app/',
+    repoLink: 'https://github.com/TierK/globs-app',
   },
   {
-    title: 'Project 3',
+    title: 'Scout Grill Store',
     video: project3Video,
-    description: 'Description for project 3',
-    demoLink: 'https://demo3.com',
-    repoLink: 'https://github.com/repo3',
+    description: 'Landing page for Weber Grills online shop',
+    demoLink: 'https://tierk.github.io/ScoutTest/',
+    repoLink: 'https://github.com/TierK/ScoutTest',
+  },
+  {
+    title: 'Design Company page',
+    image: project4Image, // Updated to use 'image' instead of 'video'
+    description: 'Landing page for design company (in the process of development)',
+    demoLink: 'coming soon',
+    repoLink: 'https://github.com/TierK/Design-Company',
   },
 ];
 

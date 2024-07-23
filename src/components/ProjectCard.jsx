@@ -4,7 +4,7 @@ import { GitHub, Link as LinkIcon } from '@mui/icons-material';
 import './ProjectCard.css';
 
 const ProjectCard = ({ project }) => {
-const { title, description, demoLink, repoLink } = project;
+  const { title, description, demoLink, repoLink, video, image } = project;
   const videoRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -19,38 +19,43 @@ const { title, description, demoLink, repoLink } = project;
       videoRef.current.currentTime = 0;
     }
   };
- 
+
   return (
-    <Card className="project-card"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
->
-    <CardMedia
-      component="div" 
-       className="project-video"
-       onMouseEnter={handleMouseEnter}
-       onMouseLeave={handleMouseLeave}
-    >
-      <video
-        ref={videoRef}
-        src={project.video}
-        alt={title}
-        className="project-video-content"
-        muted 
-        loop
-      />
-    </CardMedia>
-    <CardContent className="project-content">
-      <Typography variant="h5" component="div" className="project-title">{title}</Typography>
-      <Typography variant="body2" className="project-description">{description}</Typography>
-      <Box className="project-links">
-        <MuiLink href={demoLink} target="_blank" rel="noopener noreferrer" className="icon-wrapper">
-          <LinkIcon />
-        </MuiLink>
-        <MuiLink href={repoLink} target="_blank" rel="noopener noreferrer" className="icon-wrapper">
-          <GitHub />
-        </MuiLink>
-      </Box>
-    </CardContent>
-  </Card>
+    <Card className="project-card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <CardMedia
+        component="div"
+        className="project-media"
+      >
+        {video ? (
+          <video
+            ref={videoRef}
+            src={video}
+            alt={title}
+            className="project-video-content"
+            muted
+            loop
+          />
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className="project-image-content"
+          />
+        )}
+      </CardMedia>
+      <CardContent className="project-content">
+        <Typography variant="h5" component="div" className="project-title">{title}</Typography>
+        <Typography variant="body2" className="project-description">{description}</Typography>
+        <Box className="project-links">
+          <MuiLink href={demoLink} target="_blank" rel="noopener noreferrer" className="icon-wrapper">
+            <LinkIcon />
+          </MuiLink>
+          <MuiLink href={repoLink} target="_blank" rel="noopener noreferrer" className="icon-wrapper">
+            <GitHub />
+          </MuiLink>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 
