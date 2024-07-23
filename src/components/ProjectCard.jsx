@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Card, CardMedia, CardContent, Typography, Box, Link as MuiLink } from '@mui/material';
-import { GitHub, Link as LinkIcon } from '@mui/icons-material';
+import { GitHub } from '@mui/icons-material';
 import './ProjectCard.css';
 
 const ProjectCard = ({ project }) => {
@@ -20,8 +20,17 @@ const ProjectCard = ({ project }) => {
     }
   };
 
+  const handleCardClick = () => {
+    window.open(demoLink, '_blank');
+  };
+
   return (
-    <Card className="project-card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <Card
+      className="project-card"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleCardClick}
+    >
       <CardMedia
         component="div"
         className="project-media"
@@ -47,9 +56,6 @@ const ProjectCard = ({ project }) => {
         <Typography variant="h5" component="div" className="project-title">{title}</Typography>
         <Typography variant="body2" className="project-description">{description}</Typography>
         <Box className="project-links">
-          <MuiLink href={demoLink} target="_blank" rel="noopener noreferrer" className="icon-wrapper">
-            <LinkIcon />
-          </MuiLink>
           <MuiLink href={repoLink} target="_blank" rel="noopener noreferrer" className="icon-wrapper">
             <GitHub />
           </MuiLink>
