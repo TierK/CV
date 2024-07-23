@@ -6,7 +6,7 @@ import { Phone as PhoneIcon, Email as EmailIcon, Brightness4 as Brightness4Icon 
 import project1Video from './videos/project1.mp4';
 import project2Video from './videos/project2.mp4';
 import project3Video from './videos/project3.mp4';
-import project4Image from './images/project4.png'; // Updated to use 'image' instead of 'Vpic'
+import project4Image from './images/project4.png';
 import companyLogo1 from './images/elbit.png';
 import companyLogo2 from './images/iec.png';
 import companyLogo3 from './images/sber.png';
@@ -96,15 +96,17 @@ function App() {
         </div>
       </header>
 
-      <section>
+      <section className="experience-section">
         <h2>Professional Experience</h2>
-        {experiences.map((experience, index) => (
-          <ExperienceCard key={index} experience={experience} />
-        ))}
+        <div className="experience-gallery">
+    {experiences.map((experience, index) => (
+      <ExperienceCard key={index} experience={experience} />
+    ))}
+  </div>
       </section>
 
       <section>
-        <h2>Projects</h2>
+        <h2>A Few of My Works</h2>
         <div className="project-gallery">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />

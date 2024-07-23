@@ -1,25 +1,19 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
 import './ExperienceCard.css';
 
 function ExperienceCard({ experience }) {
-  const { title, company, period, description, logo } = experience;
   return (
-    <Card className="experience-card">
-      <CardContent className="experience-content">
-        <div className="experience-text">
-          <Typography variant="h5" className="experience-title">{title}</Typography>
-          <Typography variant="subtitle1" className="experience-company">{company}</Typography>
-          <Typography variant="body2" className="experience-period">{period}</Typography>
-          <Typography variant="body2" className="experience-description">{description}</Typography>
-        </div>
-        {logo && (
-          <div className="experience-logo">
-            <img src={logo} alt={`${company} logo`} />
-          </div>
-        )}
-      </CardContent>
-    </Card>
+    <div className="experience-card">
+      <div className="experience-card-logo">
+        <img src={experience.logo} alt={`${experience.company} logo`} />
+      </div>
+      <div className="experience-card-content">
+        <h3 className="experience-card-title">{experience.title}</h3>
+        <div className="experience-card-company">{experience.company}</div>
+        <div className="experience-card-period">{experience.period}</div>
+        <div className="experience-card-description">{experience.description}</div>
+      </div>
+    </div>
   );
 }
 
