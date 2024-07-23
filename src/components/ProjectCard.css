@@ -9,15 +9,16 @@
   transition: background-color 0.3s ease;
 }
 
-.project-video {
+.project-media {
   height: 200px;
   overflow: hidden;
   position: relative;
 }
 
-.project-video-content {
+.project-video-content, .project-image-content {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .project-content {
